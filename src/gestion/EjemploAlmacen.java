@@ -1,9 +1,6 @@
 package gestion;
 
-import productos.ProductoLimpieza;
-import productos.Productos;
-import productos.ProductosNoPerecederos;
-import productos.ProductosPerecederos;
+import productos.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +12,11 @@ public class EjemploAlmacen {
 
         System.out.println("Ingrese el nombre del cliente: ");
         String nombreCliente = entrada.nextLine();
+
+        System.out.println("Ingrese el apellido del cliente: ");
+        String apellidoCliente = entrada.nextLine();
+
+        Cliente cliente = new Cliente(nombreCliente, apellidoCliente, 1);
 
         ProductosPerecederos[] productosPerecederos = {
                 new ProductosPerecederos("Atun", 3.5, 10, "14, 05 del 2025"),
@@ -64,7 +66,7 @@ public class EjemploAlmacen {
 
             if (producto != null && vendedor != null) {
                 try {
-                    compras.add(new Compra(producto, cantidad, vendedor));
+                    compras.add(new Compra(producto, cantidad, vendedor, cliente));
                 } catch (RuntimeException e) {
                     System.out.println(e.getMessage());
                 }
@@ -79,11 +81,11 @@ public class EjemploAlmacen {
             total += subTotal;
             System.out.println(compra + " Subtotal: " + subTotal);
         }
-        System.out.println("Total a pagar " + total);
+        System.out.println("Total a pagar: " + total);
     }
 
     private static void mostrarStock(ProductosPerecederos[] productosPerecederos, ProductosNoPerecederos[] productosNoPerecederos, ProductoLimpieza[] productosLimpieza) {
-        System.out.println("Productos perecederos");
+        System.out.println("Productos perecederos ");
         for (ProductosPerecederos producto : productosPerecederos) {
             System.out.println(producto);
         }

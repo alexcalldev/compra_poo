@@ -26,6 +26,6 @@ public class ProductosPerecederos extends Productos {
     public String toString() {
         SimpleDateFormat sd = new SimpleDateFormat("dd MM 'del' yyyy");
         return super.toString() +
-                ", fechaVencimiento= " + sd.format(fechaVencimiento);
+                " , fechaVencimiento= " + sd.format(fechaVencimiento);
     }
 }

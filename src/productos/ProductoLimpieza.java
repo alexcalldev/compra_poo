@@ -21,7 +21,7 @@ public class ProductoLimpieza extends Productos {
     @Override
     public String toString() {
         return super.toString() +
-                "tipo de Limpieza = " + tipoLimpieza +
-                ", litros= " + litros ;
+                " , tipo de Limpieza: " + tipoLimpieza +
+                " , litros: " + litros ;
     }
 }

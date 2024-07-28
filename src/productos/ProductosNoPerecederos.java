@@ -15,6 +15,6 @@ public class ProductosNoPerecederos extends Productos {
     @Override
     public String toString() {
         return super.toString() +
-                "calorias=" + calorias;
+                " , calorias: " + calorias;
     }
 }

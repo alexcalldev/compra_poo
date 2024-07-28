@@ -15,6 +15,6 @@ public class Cliente extends Vendedor{
     @Override
     public String toString() {
         return super.toString() +
-                "clienteId=" + clienteId;
+                "clienteId: " + clienteId;
     }
 }
